@@ -56,11 +56,6 @@ public class SignedRequest {
         String encodedEnvelope = split[1];
 
         String json_envelope = new String(new Base64(true).decode(encodedEnvelope));
-        ObjectMapper mapper = new ObjectMapper();
-
-        StringWriter writer;
-        TypeReference<HashMap<String,Object>> typeRef
-                = new TypeReference<HashMap<String, Object>>() { };
 
         //verify(secret, algorithm, encodedEnvelope, encodedSig);
 
