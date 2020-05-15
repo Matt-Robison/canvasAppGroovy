@@ -61,7 +61,7 @@ public class Main {
 
     // Pull the signed request out of the request body and verify and decode it.
     //String signedRequest = request.getParameter("signed_request");
-    //String signedRequest = "test";
+    String signedRequest = "test";
     /*if (signedRequest == null) {
         model.put("message", "This app must be invoked via a signed request!");
         return "error";
@@ -70,7 +70,7 @@ public class Main {
     /*String yourConsumerSecret="123";
     String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);*/
 
-    //model.put("signed_request", signedRequest);
+    model.put("signed_request", signedRequest);
 
     return "testing";
   }
