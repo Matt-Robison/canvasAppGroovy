@@ -70,7 +70,7 @@ public class Main {
     /*String yourConsumerSecret="123";
     String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);*/
 
-    model.put("signed_request",);
+    model.put("signed_request", signedRequest);
 
     return "testing";
   }
