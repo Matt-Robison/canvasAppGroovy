@@ -35,7 +35,7 @@ import canvas.SignedRequest;
 @Controller
 @SpringBootApplication
 public class Main {
-  public static final yourConsumerSecret = "795D7EF172CF81210E011FC1FC3DCF84336CB00C7B1D6F033733D4686AC690ED";
+  private static final String yourConsumerSecret = "795D7EF172CF81210E011FC1FC3DCF84336CB00C7B1D6F033733D4686AC690ED";
 
   public static void main(String[] args) throws Exception {
     SpringApplication.run(Main.class, args);
