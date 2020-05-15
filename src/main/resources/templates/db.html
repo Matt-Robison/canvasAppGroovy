@@ -6,6 +6,7 @@
 
 <div class="container">
   <h1>Database Output</h1>
+  <p th:text="${maybe}">Exception message</p>
   <ul th:each="record : ${records}">
     <li th:text="${record}"/>
   </ul>

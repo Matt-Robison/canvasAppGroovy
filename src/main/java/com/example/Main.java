@@ -54,7 +54,7 @@ public class Main {
   }
 
   @RequestMapping("/testing")
-  String testing(Map<String, String> model) {
+  String testing(Map<String, Object> model) {
     model.put("cool", "sweet");
 
     return "testing";
@@ -74,6 +74,7 @@ public class Main {
       }
 
       model.put("records", output);
+      model.put("maybe", "sweet");
       return "db";
     } catch (Exception e) {
       model.put("message", e.getMessage());
