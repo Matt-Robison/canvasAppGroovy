@@ -60,8 +60,8 @@ public class Main {
     model.put("cool", "sweet");
 
     // Pull the signed request out of the request body and verify and decode it.
-    //String signedRequest = request.getParameter("signed_request");
-    String signedRequest = "test";
+    String signedRequest = request.getParameter("signed_request");
+    //String signedRequest = "test";
     /*if (signedRequest == null) {
         model.put("message", "This app must be invoked via a signed request!");
         return "error";
