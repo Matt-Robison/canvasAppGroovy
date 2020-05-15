@@ -54,8 +54,8 @@ public class Main {
   }
 
   @RequestMapping("/testing")
-  String testing() {
-    model.put("cool", "HI!!!");
+  String myModel(Map<String, String> model) {
+    model.put("cool", "sweet");
 
     return "testing";
   }
