@@ -35,6 +35,7 @@ import canvas.SignedRequest;
 @Controller
 @SpringBootApplication
 public class Main {
+  public static final yourConsumerSecret = "795D7EF172CF81210E011FC1FC3DCF84336CB00C7B1D6F033733D4686AC690ED";
 
   public static void main(String[] args) throws Exception {
     SpringApplication.run(Main.class, args);
@@ -51,16 +52,15 @@ public class Main {
 
     // Pull the signed request out of the request body and verify and decode it.
     String signedRequest = request.getParameter("signed_request");
-    //String signedRequest = "test";
-    /*if (signedRequest == null) {
+
+    if (signedRequest == null) {
         model.put("message", "This app must be invoked via a signed request!");
         return "error";
     }
 
-    /*String yourConsumerSecret="123";
-    String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);*/
+    String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest, yourConsumerSecret);
 
-    model.put("signed_request", signedRequest);
+    model.put("signed_request", signedRequestJson);
 
     return "testing";
   }
