@@ -34,6 +34,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
+import canvas.SignedRequest;
+
 @Controller
 @SpringBootApplication
 public class Main {
@@ -56,6 +58,19 @@ public class Main {
   @RequestMapping("/testing")
   String testing(Map<String, Object> model) {
     model.put("cool", "sweet");
+
+    // Pull the signed request out of the request body and verify and decode it.
+    String signedRequest = request.getParameter("signed_request");
+
+    if (signedRequest == null) {
+        model.put("message", "This app must be invoked via a signed request!");
+        return "error";
+    }
+
+    /*String yourConsumerSecret="123";
+    String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);*/
+
+    model.put("signed_request",);
 
     return "testing";
   }
