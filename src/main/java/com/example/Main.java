@@ -55,6 +55,8 @@ public class Main {
 
   @RequestMapping("/testing")
   String testing() {
+    model.put("cool", "HI!!!");
+
     return "testing";
   }
 
