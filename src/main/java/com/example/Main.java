@@ -34,7 +34,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
-//import canvas.SignedRequest;
+import canvas.SignedRequest;
 
 @Controller
 @SpringBootApplication
