@@ -55,8 +55,8 @@ public class Main {
     return "index";
   }
 
-  @RequestMapping("/testing")
-  String testing(HttpServletRequest request, Map<String, Object> model) {
+  @RequestMapping(value = "/testing", method = RequestMethod.POST)
+  String testing(WebRequest request, Map<String, Object> model) {
     model.put("cool", "sweet");
 
     // Pull the signed request out of the request body and verify and decode it.
