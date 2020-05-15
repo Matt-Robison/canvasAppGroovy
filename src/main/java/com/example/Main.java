@@ -56,7 +56,7 @@ public class Main {
   }
 
   @RequestMapping("/testing")
-  String testing(Map<String, Object> model) {
+  String testing(HttpServletRequest request, Map<String, Object> model) {
     model.put("cool", "sweet");
 
     // Pull the signed request out of the request body and verify and decode it.
