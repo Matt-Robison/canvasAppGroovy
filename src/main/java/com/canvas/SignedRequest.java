@@ -48,35 +48,6 @@ import java.util.HashMap;
  *
  */
 public class SignedRequest {
-
-    public static CanvasRequest verifyAndDecode(String input, String secret) throws SecurityException {
-
-        String[] split = getParts(input);
-
-        String encodedSig = split[0];
-        String encodedEnvelope = split[1];
-
-        // Deserialize the json body
-        String json_envelope = new String(new Base64(true).decode(encodedEnvelope));
-        ObjectMapper mapper = new ObjectMapper();
-        ObjectReader reader = mapper.reader(CanvasRequest.class);
-        CanvasRequest canvasRequest;
-        String algorithm;
-        try {
-            canvasRequest = reader.readValue(json_envelope);
-            algorithm = canvasRequest.getAlgorithm() == null ? "HMACSHA256" : canvasRequest.getAlgorithm();
-        } catch (IOException e) {
-            throw new SecurityException(String.format("Error [%s] deserializing JSON to Object [%s]", e.getMessage(), CanvasRequest.class.getName()), e);
-        }
-
-        verify(secret, algorithm, encodedEnvelope, encodedSig);
-
-        // If we got this far, then the request was not tampered with.
-        // return the request as a Java object
-        return canvasRequest;
-    }
-
-
     public static String verifyAndDecodeAsJson(String input, String secret) throws SecurityException {
         String algorithm = "HMACSHA256";
         String[] split = getParts(input);
