@@ -2,15 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'testing')}">
 
 <body>
-
+<script src="https://issuercp-asx.cs151.force.com/IssuerPortal/lightning/lightning.out.js"></script>
 
 <div class="container">
-  <h1>Some testing</h1>
+  <h1>User Management</h1>
   <ul>
-    <p th:text="yea">Some Message</p>
-    <p th:text="wow">Some Message 2</p>
+    <p th:text="yea">Lets see this work!</p>
   </ul>
 </div>
+
+<div id="lwcUserManagement"></div>
+
+<script>
+  $Lightning.use("c:UserManagementOut", function() {
+      $Lightning.createComponent(
+          "c:issuerUserManagement",
+          {},
+          "lwcUserManagement",
+          function(cmp) {
+              console.log("LWC component was created");
+          }
+      );
+  });
+  </script>
 
 </body>
 </html>
