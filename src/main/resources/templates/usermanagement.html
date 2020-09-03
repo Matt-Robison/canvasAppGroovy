@@ -5,10 +5,7 @@
 <script src="https://issuercp-asx.cs151.force.com/IssuerPortal/lightning/lightning.out.js"></script>
 
 <div class="container">
-  <h1>User Management</h1>
-  <ul>
-    <p th:text="yea">Lets see this work!</p>
-  </ul>
+  <h2>User Management</h2>
 </div>
 
 <div id="lwcUserManagement"></div>
@@ -18,7 +15,7 @@
       $Lightning.createComponent(
           "c:issuerUserManagement",
           {},
-          "lwcUserManagement",
+          "lwcUserManagementOut",
           function(cmp) {
               console.log("LWC component was created");
           }
