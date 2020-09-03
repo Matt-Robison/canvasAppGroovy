@@ -64,4 +64,9 @@ public class Main {
 
     return "testing";
   }
+
+  @RequestMapping("/usermanagement")
+  String usermanagement() {
+    return "usermanagement";
+  }
 }
