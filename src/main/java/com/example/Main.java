@@ -69,4 +69,9 @@ public class Main {
   String usermanagement() {
     return "usermanagement";
   }
+
+  @RequestMapping("/stp")
+  String stp() {
+    return "stp";
+  }
 }
